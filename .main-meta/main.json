@@ -4,8 +4,8 @@
     "content": {
         "metaDataVersion": "1.3.0",
         "name": "com.microchip.mcu8.mplabx.project.pic18f47k42-scrolling-text-fire-mplab-mcc",
-        "version": " ",
-        "displayName": "",
+        "version": "1.0.0",
+        "displayName": "WS2812b Scrolling Text And Fire Demo",
         "projectName": "pic18f47k42-scrolling-text-fire-mplab-mcc",
         "shortDescription": "A demo showing the pic18f57k42 with WS2812b RGB LEDs, with scrolling text and simulated fire.",
         "ide": {
@@ -19,12 +19,12 @@
             }
         ],
         "dfp": {
-            "name": "",
-            "semverRange": ""
+            "name": "PIC18F-K_DFP",
+            "semverRange": "^1.6.125"
         },
         "configurator": {
-            "name": "",
-            "semverRange": ""
+            "name": "MCC",
+            "semverRange": "^5.0.3"
         },
         "device": {
             "metaDataVersion": "1.0.0",
@@ -37,8 +37,20 @@
             }
         },
         "author": "Ross Satchell",
-        "peripherals": [],
-        "keywords": [],
+        "peripherals": [
+			"ADCC",
+			"CLC",
+			"PWM",
+			"SPI",
+			"TMR1",
+			"TMR2"
+		],
+        "keywords": [
+			"MCC Classic",
+			"CIP",
+			"WS2812/11",
+			"LED"
+			],
         "additionalData": {
             "longDescription": {
                 "metaDataVersion": "1.0.0",
