@@ -79,7 +79,7 @@ To send a RET code requires a LOW pulse as shown below. Image taken from WS2812B
 Refer to the image below for timing specifications for sending a '1', '0', and RET code. Image taken from WS2812B datasheet.  <br>
 ![WS2812B Data Transfer Time](./images/WS2812_data_transfer_time.png)
 
-WS2812B RGB LEDs are cascaded as shown in the image below. Image taken from WS2812B datasheet.  <br>
+WS2812B RGB LEDs are cascaded as shown in the image below. Image taken from WS2812B datasheet.  <br> 
 ![WS2812B Cascade Method](./images/WS2812_cascade.png)
 
 To achieve the specific timing requirements for the WS2812B using an 8-bit MCU, PWM, SPI, and CCL peripherals were used to generate the specific waveforms.
