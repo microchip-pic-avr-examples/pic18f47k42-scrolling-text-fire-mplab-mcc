@@ -2,17 +2,17 @@
 
 [![MCHP](./images/microchip.png)](https://www.microchip.com)
 
-# WS2812b Scrolling Text, with Simulated Fire
+# WS2812B Scrolling Text, with Simulated Fire
 
-This project uses an 8x32 array of WS2812b individually addressable RGB LEDs to generate a variety of patterns, including a spinner, fire, shimmer, and scrolling text.
+This project uses an PIC18F47K42 with a HPC Development board driving a 8x32 array of WS2812B individually addressable RGB LEDs to generate a variety of patterns, including a spinner, fire, shimmer, and scrolling text.
 This projects highlights the advanced array of Core Independent Peripherals (CIP) available on Microchip 8-bit PIC devices, including ADCC (Analog to Digital Converter with Computation), CLC (Configurable Custom Logic),
-PWM (Pulse Width Modulation), SPI (Serial Peripheral Interface), and Timers. Furthermore, this project shows how custom timing protocols, such as the one employed by the WS2812b can be implemented in peripherals, making it possible to use an 8-bit MCU for this task.
+PWM (Pulse Width Modulation), SPI (Serial Peripheral Interface), and Timers. Furthermore, this project shows how custom timing protocols, such as the one employed by the WS2812B can be implemented in peripherals, making it possible to use an 8-bit MCU for this task.
 
 
 
 ## Related Documentation
 
- [WS2812b Datasheet](http://www.world-semi.com/Certifications/WS2812B.html)
+ [WS2812B Datasheet](http://www.world-semi.com/Certifications/WS2812B.html)
 
 
  Some related project examples:  
@@ -41,7 +41,7 @@ A custom PCB was made to use the MikroBUS&trade; socket on the Curiosity HPC Dev
 
 A PIC18F47K42 DIP is plugged into the DIP socket on the Curiosity HPC Development Board.
 A custom PCB was made to fit the MikroBUS socket on the Curiosity HPC Development Board.
-This PCB has terminal blocks for power supply input and output to the array of WS2812b RGB LEDs.
+This PCB has terminal blocks for power supply input and output to the array of WS2812B RGB LEDs.
 
 
 
@@ -64,28 +64,29 @@ This PCB has terminal blocks for power supply input and output to the array of W
 
 
 ![MCC Pin Manager Window View](./images/pin_manager.png)
-<br> <br>
-![Curiosity Nano Project Setup](./images/project_setup.jpg) ((((NEED THIS PHOTO OF WHOLE PROJECT!!))))
+<br> <br>  
+Project Setup
+![Curiosity Nano Project Setup](./images/project_setup.jpg)
 
 
 
 ## Operation
 
-The WS2812b requires the use of a custom protocol. To send a '1' or '0', the user must send a HIGH pulse and then a LOW pulse as shown in the image below.
+The WS2812B requires the use of a custom protocol. To send a '1' or '0', the user must send a HIGH pulse and then a LOW pulse as shown in the image below.
 To send a RET code requires a LOW pulse as shown below.  
-![WS2812b Sequence Chart](./images/WS2812_sequence_chart.png)
+![WS2812B Sequence Chart](./images/WS2812_sequence_chart.png)
 
 Refer to the image below for timing specifications for sending a '1', '0', and RET code.
-![WS2812b Data Transfer Time](./images/WS2812_data_transfer_time.png)
+![WS2812B Data Transfer Time](./images/WS2812_data_transfer_time.png)
 
-WS2812b RGB LEDs are cascaded as shown in the image below.  
-![WS2812b Cascade Method](./images/WS2812_cascade.png)
+WS2812B RGB LEDs are cascaded as shown in the image below.  
+![WS2812B Cascade Method](./images/WS2812_cascade.png)
 
-To achieve the specific timing requirements for the WS2812b using an 8-bit MCU, PWM, SPI, and CCL peripherals were used to generate the specific waveforms.
+To achieve the specific timing requirements for the WS2812B using an 8-bit MCU, PWM, SPI, and CCL peripherals were used to generate the specific waveforms.
 
 ### ADCC Module Configuration:
 
-The ADCC configuration in this example was used to measure the analog voltage from 2 potentiomenters, one for hue, the other for brightness of the WS2812b array.
+The ADCC configuration in this example was used to measure the analog voltage from 2 potentiomenters, one for hue, the other for brightness of the WS2812B array.
 The peripheral was configured to take single measurements for each of the two channels used, with VDD as the positive reference, VSS as the negative reference, and using left alignment.
 The selected clock source was FOSC/ADCLK and the clock used was FOSC/64. This gave the time to complete 1 bit conversion (TAD) as 1µs, a sampling frequency of 86.96 kHz and a conversion time of 11.5µs.
 See image below for ADCC setup.
@@ -109,13 +110,13 @@ See image below for TMR2 setup.
 ### PWM5 Configuration:
 
 PWM5 used TMR2 as its base timer with a duty cycle of 25%. This gives a HIGH time of 156.25 ns and a LOW time of 468.75 ns.
-See image below for PWM5 setup.
+See image below for PWM5 setup.  
 ![PWM5 Configuration](./images/PWM5_config.png)
 
 ### PWM6 Configuration:
 
 PWM6 used TMR2 as its base timer with a duty cycle of 66%. This gives a HIGH time of 412.5 ns and a LOW time of 212.5 ns.
-See image below for PWM6 setup.
+See image below for PWM6 setup.  
 ![PWM6 Configuration](./images/PWM6_config.png)
 
 ### SPI1 Configuration:
@@ -128,13 +129,12 @@ See image below for SPI1 setup.
 
 ### CLC1 Config:
 
-CLC1 was used to put together the following signals to create the custom protocol required for the WS2812b: SPI1 SCK, SPI1 SDO, PWM5, PWM6.
+CLC1 was used to put together the following signals to create the custom protocol required for the WS2812B: SPI1 SCK, SPI1 SDO, PWM5, PWM6.
 The mode selected was AND-OR.
 See image below for CLC1 setup.  
 ![CLC1 Configuration](./images/CLC1_config.png)
 
 
-
 ## Summary
 
-This example shows how to drive a WS2812b 8x32 RGB LED array using the PIC18F47K42.
+This example shows how to drive a WS2812B 8x32 RGB LED array using the PIC18F47K42.
