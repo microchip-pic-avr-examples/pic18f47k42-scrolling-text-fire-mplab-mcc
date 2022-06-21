@@ -6,7 +6,7 @@
 
 This project uses an PIC18F47K42 with a HPC Development board driving a 8x32 array of WS2812B individually addressable RGB LEDs to generate a variety of patterns, including a spinner, fire, shimmer, and scrolling text.
 This projects highlights the advanced array of Core Independent Peripherals (CIP) available on Microchip 8-bit PIC devices, including ADCC (Analog to Digital Converter with Computation), CLC (Configurable Custom Logic),
-PWM (Pulse Width Modulation), SPI (Serial Peripheral Interface), and Timers. Furthermore, this project shows how custom timing protocols, such as the one employed by the WS2812B can be implemented in peripherals, making it possible to use an 8-bit MCU for this task.
+PWM (Pulse Width Modulation), SPI (Serial Peripheral Interface), and Timers. Furthermore, this project shows how custom timing protocols, such as the one employed by the WS2812B can be implemented in peripherals, making it possible to use an 8-bit MCU for this task. 
 
 
 
@@ -79,7 +79,7 @@ To send a RET code requires a LOW pulse as shown below. Image taken from WS2812B
 Refer to the image below for timing specifications for sending a '1', '0', and RET code. Image taken from WS2812B datasheet.  <br>
 ![WS2812B Data Transfer Time](./images/WS2812_data_transfer_time.png)
 
-WS2812B RGB LEDs are cascaded as shown in the image below. Image taken from WS2812B datasheet.  <br> 
+WS2812B RGB LEDs are cascaded as shown in the image below. Image taken from WS2812B datasheet.  <br>
 ![WS2812B Cascade Method](./images/WS2812_cascade.png)
 
 To achieve the specific timing requirements for the WS2812B using an 8-bit MCU, PWM, SPI, and CCL peripherals were used to generate the specific waveforms.
