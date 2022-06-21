@@ -5,9 +5,9 @@
         "metaDataVersion": "1.3.0",
         "name": "com.microchip.mcu8.mplabx.project.pic18f47k42-scrolling-text-fire-mplab-mcc",
         "version": "1.0.0",
-        "displayName": "WS2812b Scrolling Text And Fire Demo",
+        "displayName": "WS2812B Scrolling Text And Fire Demo",
         "projectName": "pic18f47k42-scrolling-text-fire-mplab-mcc",
-        "shortDescription": "A demo showing the pic18f57k42 with WS2812b RGB LEDs, with scrolling text and simulated fire.",
+        "shortDescription": "A demo showing the PIC18F57K42 with WS2812B RGB LEDs, with scrolling text and simulated fire.",
         "ide": {
             "name": "MPLAB X",
             "semverRange": ">=5.50.0"
