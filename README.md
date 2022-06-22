@@ -2,7 +2,7 @@
 
 # WS2812B Scrolling Text, with Simulated Fire  
 This project uses an PIC18F47K42 with a HPC Development board to drive an array of 8x32 WS2812B RGB LEDs to generate a variety of visual patterns, including a spinner, fire, shimmer, and scrolling text.
-This projects highlights the advanced array of Core Independent Peripherals (CIP) available on Microchip 8-bit PIC&reg; microcontrollers, including the ADCC (Analog to Digital Converter with Computation), CLC (Configurable Custom Logic),
+This project highlights the advanced array of Core Independent Peripherals (CIP) available on Microchip 8-bit PIC&reg; microcontrollers, including the ADCC (Analog to Digital Converter with Computation), CLC (Configurable Custom Logic),
 PWM (Pulse Width Modulation), SPI (Serial Peripheral Interface), and Timers. Furthermore, this project shows how custom timing protocols, such as WS2812B, can be implemented in peripherals, making it possible to use an 8-bit MCU for this task.
 
 ## Related Documentation
